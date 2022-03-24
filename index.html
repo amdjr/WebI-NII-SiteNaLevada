@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="css/estilo.css" as="style">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="engine0/style.css" />
+    <link rel="preload" href="css/estilo.css" as="style">
+    <link rel="stylesheet" href="css/estilo.css" type="text/css">
+    <title>Na Levada - Oficial</title>
+
+</head>
+
+<body>
+    <a id="btnTopo" href="#"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+    <main>
+        <header id="topo">
+            <a id="logo" href="index.html">
+                <h1>Na Levada</h1>
+            </a>
+            <nav id="nav">
+                <button id="btn-menu" onclick="btnMobile">
+                    <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+                </button>
+                <ul id="menu" onclick="fecharMenu()">
+                    <li><a href="#tela2">Bio</a></li>
+                    <li><a href="#tela3">Agenda</a></li>
+                    <li><a class="menuGaleria" href="#galeria">Galeria</a></li>
+                    <li><a href="#contatoModal" onclick="abrirForm()">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="tela1">
+
+            <aside id="player">
+                <div>
+                    <p><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i> Escute nossa música nova!</p>
+                    <button class="btn-player" onclick="document.getElementById('audio').play()"><i class="fa fa-play"
+                            aria-hidden="true"></i></button>
+                    <button class="btn-player" onclick="document.getElementById('audio').pause()"><i class="fa fa-pause"
+                            aria-hidden="true"></i></button>
+                    <button class="btn-player" onclick="document.getElementById('audio').volume+=0.1"><i
+                            class="fa fa-volume-up" aria-hidden="true"></i></button>
+                    <button class="btn-player" onclick="document.getElementById('audio').volume-=0.1"><i
+                            class="fa fa-volume-down" aria-hidden="true"></i></button>
+                    <h3>"A gente complica"</h3>
+                </div>
+                <audio id="audio" loop src="music/audio.mp3"></audio>
+            </aside>
+        </section>
+
+        <section id="tela2">
+            <div id="titulo">
+                <h2>Integrantes</h2>
+            </div>
+            <div>
+                <article class="gustavo card">
+                    <button class="btn" onclick="abrirModal1()">Gustavo</button>
+                </article>
+                <article class="erisson card">
+                    <button class="btn" onclick="abrirModal2()">Erisson</button>
+                </article>
+                <article Class="marcelo card">
+                    <button class="btn" onclick="abrirModal3()">Marcelo</button>
+                </article>
+                <article class="andrew card">
+                    <button class="btn" onclick="abrirModal4()">Andrew</button>
+                </article>
+                <article class="deivao card">
+                    <button class="btn" onclick="abrirModal5()">Deivão</button>
+                </article>
+                <article class="matheus card">
+                    <button class="btn" onclick="abrirModal6()">Matheus</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="tela3">
+            <aside>
+                <figure id="banner"></figure>
+                <div id="agenda">
+                    <h2>Shows</h2>
+                    <ul>
+                        <li>Troop Bar / 30.06</li>
+                        <li>Alternativo Bar / 01.07</li>
+                        <li>Viagras Bar / 02.07</li>
+                        <li>Evolução Bar / 04.07</li>
+                        <li>Carinhoso Bar / 12.07</li>
+                        <li>Café Moinhos Bar / 13.07</li>
+                        <li>São Paulo / 14.07</li>
+                        <li>Rio de Janeiro / 24.07</li>
+                    </ul>
+                </div>
+            </aside>
+            <!-- carrossel -->
+            <div id="galeria">
+                <div id="wowslider-container0">
+                    <div class="ws_images">
+                        <ul>
+                            <li><img src="data0/images/bio1.jpg" alt="bio1" title="bio1" id="wows0_0" /></li>
+                            <li><img src="data0/images/foto1.jpg" alt="foto1" title="foto1" id="wows0_1" /></li>
+                            <li><img src="data0/images/foto2.jpg" alt="foto2" title="foto2" id="wows0_2" /></li>
+                            <li><img src="data0/images/fundo2.jpg" alt="css image slider" title="fundo2" id="wows0_3" />
+                            </li>
+                            <li><img src="data0/images/fundo3.jpg" alt="fundo3" title="fundo3" id="wows0_4" /></li>
+                        </ul>
+                    </div>
+                    <div class="ws_bullets">
+                        <div>
+                            <a href="#" title="bio1"><span><img src="data0/tooltips/bio1.jpg" alt="bio1" />1</span></a>
+                            <a href="#" title="foto1"><span><img src="data0/tooltips/foto1.jpg"
+                                        alt="foto1" />2</span></a>
+                            <a href="#" title="foto2"><span><img src="data0/tooltips/foto2.jpg"
+                                        alt="foto2" />3</span></a>
+                            <a href="#" title="fundo2"><span><img src="data0/tooltips/fundo2.jpg"
+                                        alt="fundo2" />4</span></a>
+                            <a href="#" title="fundo3"><span><img src="data0/tooltips/fundo3.jpg"
+                                        alt="fundo3" />5</span></a>
+                        </div>
+                        <div class="ws_shadow"></div>
+                    </div>
+                    <script type="text/javascript" src="engine0/jquery.js"></script>
+                    <script type="text/javascript" src="engine0/wowslider.js"></script>
+                    <script type="text/javascript" src="engine0/script.js"></script>
+                    <!-- End WOWSlider.com BODY section -->
+
+                </div>
+            </div>
+        </section>
+
+        <footer id="rodape">
+            <article>
+                <h2>Contrate o Na Levada</h2>
+                <div>
+                    <p>Visite: Tropa - Produções</p>
+                    <a title="www.tropaproducoes.com.br" target="_blank"
+                        href="http://www.tropaproducoes.com.br/">http://www.tropaproducoes.com.br/"</a>
+                </div>
+            </article>
+            <div id="redes-sociais">
+                <a title="Facebook/Na Levada" href="https://www.facebook.com/nalevadaoficial/" target="_blank"><i
+                        class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                <a title="Twitter/Na Levada" href="https://twitter.com/nalevadaoficial" target="_blank"><i
+                        class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+                <a title="Instagram/Na Levada" href="https://www.instagram.com/nalevadaoficial/" target="_blank"><i
+                        class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+                <a title="Youtube/Na Levada" href="https://www.youtube.com/c/GrupoNaLevada/featured" target="_blank"><i
+                        class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                <a title="Spotfy/Na Levada" href="https://open.spotify.com/artist/7HzwECuBHTHr2euB5WrvzP"
+                    target="_blank"><i class="fa fa-spotify fa-lg" aria-hidden="true"></i></a>
+                <p>
+                    Copyright © Desenvolvido por Adilson Monteiro - 2021. Todos os direitos reservados.
+                </p>
+            </div>
+        </footer>
+
+        <!-- modal formulario / contato -->
+
+        <section id="contatoModal" class="modal">
+            <div class="modalForm" ondblclick="fecharForm()">
+
+                <div id="contato">
+                    <div>
+                        <h2>Contrate o Na Levada!</h2>
+                    </div>
+                    <ul>
+                        <li><i class="fa fa-phone  fa-lg" aria-hidden="true"
+                                style="color: rgb(8, 199, 8); margin: 0;"></i></li>
+                        <li>Tel (51) xxxx-xxxx</li>
+                        <li><i class="fa fa-whatsapp fa-lg" aria-hidden="true"
+                                style="color: rgb(8, 199, 8); margin: 0;"></i></li>
+                        <li>Cel (51) xxxx-xxxx</li>
+                        <li> <i class="fa fa-envelope-o  fa-lg" aria-hidden="true"
+                                style="color: rgb(8, 199, 8); margin: 0;"></i></li>
+                        <li>nalevada@troop.com.br</li>
+                    </ul>
+                </div>
+
+                <div id="cadastro">
+                    <form id="formulario" name="formulario">
+                        <h3>Cadastre-se</h3>
+                        <label>Nome: </label>
+                        <input required type="text" name="nome" placeholder="Digite-seu nome" id="nome">
+                        <label>Email: </label>
+                        <input required type="email" name="email" placeholder="Digite-seu e-mail" id="email">
+                        <input id="btnEnviar" type="button" value="Enviar" onclick="validarForm()">
+                        <button id="reset" type="reset" onclick="limparForm()" value="reset">Limpar</button>
+                    </form>
+                    <h4 id="status">.</h4>
+                </div>
+
+                <button class="btnFechar" onclick="fecharForm()">
+                    <i class="fa fa-window-close" aria-hidden="true"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- modais integrantes -->
+
+        <section id="telaModal1" class="modal" onclick="fecharModal1()">
+            <div class="conteudo-modal">
+                <figure class="fotoModal gustavo card"></figure>
+                <div class="textoModal card">
+                    <h2>Gustavo</h2>
+                    <h3>Percussão</h3>
+                    <p>Tocador de surdo, tem um irmão gêmeo, irmão do Marcelo cantor, um celtinha e é gente boa. 😃</p>
+                </div>
+                <button class="btnFechar" onclick="fecharModal1()"><i class="fa fa-window-close"
+                        aria-hidden="true"></i></button>
+            </div>
+
+        </section>
+
+        <section id="telaModal2" class="modal" onclick="fecharModal2()">
+            <div class="conteudo-modal">
+                <figure class="fotoModal erisson card"></figure>
+                <div class="textoModal card">
+                    <h2>Erisson</h2>
+                    <h3>Cavaquinho</h3>
+                    <p>Amante da boa música, gosta de cantar MPB em vídeos nas redes sociais, sempre muito "macio"... 😎
+                    </p>
+                </div>
+                <button class="btnFechar" onclick="fecharModal2()"><i class="fa fa-window-close"
+                        aria-hidden="true"></i></button>
+            </div>
+        </section>
+
+        <section id="telaModal3" class="modal" onclick="fecharModal3()">
+            <div class="conteudo-modal">
+                <figure class="fotoModal marcelo card"></figure>
+                <div class="textoModal card">
+                    <h2>Marcelo Jr</h2>
+                    <h3>Voz e percussão</h3>
+                    <p>Um de nossos cantores, denserola no canto e na percussão, além de cuidar do visual capilar da
+                        galera!😁 </p>
+                </div>
+                <button class="btnFechar" onclick="fecharModal3()"><i class="fa fa-window-close"
+                        aria-hidden="true"></i></button>
+            </div>
+        </section>
+
+        <section id="telaModal4" class="modal" onclick="fecharModal4()">
+            <div class="conteudo-modal">
+                <figure class="fotoModal andrew card"></figure>
+                <div class="textoModal card">
+                    <h2>Andrew</h2>
+                    <h3>Voz e violão</h3>
+                    <p>Nosso cantor mais antigo e mais recente ao mesmo tempo! Canta demais e toca violão, é o novo galã
+                        da parada 40 de Viamão. 😍</p>
+                </div>
+                <button class="btnFechar" onclick="fecharModal4()"><i class="fa fa-window-close"
+                        aria-hidden="true"></i></button>
+            </div>
+        </section>
+
+        <section id="telaModal5" class="modal" onclick="fecharModal5()">
+            <div class="conteudo-modal">
+                <figure class="fotoModal deivao card"></figure>
+                <div class="textoModal card">
+                    <h2>Deivão</h2>
+                    <h3>Tantan</h3>
+                    <p>Nosso goleiro que não deixa passar nada e garante a batucada de responsa Na Levada desse tantan!
+                        🙌🎶</p>
+                </div>
+                <button class="btnFechar" onclick="fecharModal5()"><i class="fa fa-window-close"
+                        aria-hidden="true"></i></button>
+            </div>
+        </section>
+
+        <section id="telaModal6" class="modal" onclick="fecharModal6()">
+            <div class="conteudo-modal">
+                <figure class="fotoModal matheus card"></figure>
+                <div class="textoModal card">
+                    <h2>Matheus</h2>
+                    <h3>Pandeiro</h3>
+                    <p>Nosso caçula de banda, mas fechado com a família desde sempre! Pandeiro de fé e firme Na Levada!
+                        😆</p>
+                </div>
+                <button class="btnFechar" onclick="fecharModal6()"><i class="fa fa-window-close"
+                        aria-hidden="true"></i></button>
+            </div>
+        </section>
+
+    </main>
+    <script type="text/javascript" src="js/funcoes.js">
+    </script>
+
+</body>
+
+</html>

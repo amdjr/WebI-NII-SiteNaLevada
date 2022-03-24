@@ -1,0 +1,1343 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-shadow: 0px 0px 1px #000;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Largura da barra de rolagem */
+
+::-webkit-scrollbar {
+    display: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar:hover {
+    background-color: rgba(94, 91, 92, 0.5);
+    ;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+body {
+    max-height: 300% !important;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 301.6%;
+    position: relative;
+    overflow: auto;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header {
+    width: 100%;
+    height: 15vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+header h1 {
+    visibility: hidden;
+}
+
+header #logo {
+    color: #fff;
+    width: 55%;
+    height: 100%;
+    background-image: url(../img/Logo-branco.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.6s ease;
+    margin-left: 5%;
+
+}
+
+header #logo:hover {
+    background-color: rgba(94, 91, 92, 0.5);
+    transition: 0.3s;
+}
+
+header nav {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#menu {
+    color: #fff;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 50px;
+    transition: 0.6s ease;
+    font-size: 1.3rem;
+    padding-right: 5%;
+}
+
+#btn-menu {
+    display: none;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.511);
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+}
+
+#btn-menu:hover {
+    text-shadow: 0px 0px 2px 60px #fff;
+    background-color: rgba(216, 19, 58, 0.5);
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.fecharMenu {
+    display: none;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.511);
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+}
+
+.fecharMenu:hover {
+    text-shadow: 0px 0px 2px 60px #fff;
+    background-color: rgba(216, 19, 58, 0.5);
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+#menu ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#menu ul li {
+    font-weight: bold;
+    font-size: 3.6vh;
+    color: bisque;
+    text-shadow: 1px 1px 10px #000;
+    padding: 20px;
+    margin-right: 5%;
+}
+
+#menu li:hover {
+    background-color: rgba(216, 19, 58, 0.5);
+    transition: 0.3s;
+    font-size: 3.2vh;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #000;
+}
+
+#menu a {
+    display: block;
+    padding: 0.4rem;
+    text-shadow: 1px 1px 5px #000;
+}
+
+/* media query do botao menu */
+
+@media (max-width: 769px) {
+
+    header nav {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+    }
+
+    #btn-menu {
+        display: block;
+    }
+
+    #menu {
+        display: block;
+        position: absolute;
+        height: 0;
+        top: 100px;
+        right: 0;
+        background-color: rgb(77, 72, 72);
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    #nav.active #menu {
+        display: block;
+        width: 100vw;
+        height: calc(100vh - 60vh);
+        overflow-y: auto;
+        visibility: visible;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
+        text-align: center;
+        transition: 0.6s;
+        background-color: rgba(77, 72, 72, 0.8);
+        z-index: 500;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    }
+
+}
+
+/* botao voltar ao topo */
+
+#btnTopo {
+    background-color: #38322e;
+    border-radius: 65px;
+    bottom: 14px;
+    box-shadow: 2px 3px 19px -2px rgba(138, 130, 130, 0.75);
+    color: #ce40db;
+    cursor: pointer;
+    height: 40px;
+    position: fixed;
+    right: 22px;
+    width: 40px;
+    z-index: 500;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#btnTopo:hover {
+    text-shadow: 0px 0px 2px 60px rgb(24, 19, 19);
+    background-color: rgba(206, 0, 41, 0.925);
+    transition: 0.4s;
+    font-weight: bold;
+    color: #fff;
+    transform: rotate(360g);
+    z-index: 500;
+    transform: scale(1.2);
+}
+
+@media (max-width:680px) {
+    #btnTopo {
+        bottom: 180px;
+        background-color: rgba(105, 105, 105, 0.9);
+        border-radius: 65px;
+        bottom: 14px;
+        box-shadow: 2px 3px 19px -2px rgba(138, 130, 130, 0.75);
+        color: rgba(128, 120, 126, 1.1);
+        opacity: 50%;
+    }
+
+    #btnTopo:hover {
+        opacity: 100%;
+    }
+}
+
+/* TELA 1 */
+
+#tela1 {
+    width: 100%;
+    height: 85vh;
+    background-image: url(../img/fundo1.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    transition: 0.6s ease;
+    overflow: auto;
+    margin: 0 auto;
+    scroll-behavior: auto;
+}
+
+/* CSS DO PLAYER da TELA 1 */
+
+#tela1 #player {
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#tela1 #player:hover {
+    text-shadow: 0px 0px 2px 60px #fff;
+    background-color: rgba(216, 19, 58, 0.5);
+    transition: 0.4s;
+    font-weight: bold;
+    color: #fff;
+
+}
+
+audio::-webkit-media-controls-timeline {
+    display: flow-root;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: rgba(3, 9, 99, 0.315);
+}
+
+#tela1 #player h3 {
+    font-family: 'Dancing Script', cursive;
+    font-style: italic;
+    text-align: center;
+    font-size: 2em;
+    text-shadow: 2px 2px 1px whitesmoke, black;
+}
+
+.btn-player {
+    color: #000;
+    border-radius: 15px;
+    width: 10vh;
+    height: 4vh;
+    box-shadow: 1px 1px 10px #333, 1px 1px 50px rgb(252, 250, 250);
+}
+
+.btn-player:hover {
+    background-color: rgb(211, 212, 212);
+    font-size: 2.5vh;
+    font-weight: bold;
+    color: rgb(216, 19, 58);
+    text-shadow: 1px 1px 5px rgb(255, 255, 255);
+}
+
+@media screen and (max-width:760px) {
+
+    #tela1 {
+
+        background-image: url(../img/fundo4.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-color: #000;
+    }
+
+    #tela1 #player h3 {
+        color: whitesmoke;
+    }
+
+}
+
+@media screen and (max-width:321px) {
+
+    #tela1 {
+        background-image: url(../img/clipeFoto.jpg);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: 180%;
+    }
+
+    #tela1 #player {
+        position: absolute;
+        top: 430px;
+        margin: 5% 5%;
+    }
+
+    .btn-player {
+        width: 8vh;
+        height: 5vh;
+
+    }
+
+    #rodape p {
+        font-size: 0.5em;
+        margin: 0;
+        min-width: fit-content;
+    }
+}
+
+/* TELA 2 */
+
+
+#tela2 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(77, 72, 72);
+    overflow: auto;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+    max-height: fit-content;
+    box-shadow: 0px 0px 50px whitesmoke;
+
+}
+
+#tela2 h2 {
+    font-size: 12vw;
+    margin: 10px;
+    text-shadow: 1px 1px 10px rgba(255, 252, 252, 0.71);
+    box-shadow: 1px 1px 50px rgba(255, 252, 252, 0.71);
+
+}
+
+#tela2 #titulo {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(16, 26, 160);
+    text-align: justify;
+    background-image: url(../img/Logo-branco.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
+
+#tela2 div {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#tela2 div article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+#tela2 div article button {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 6px rgb(0, 0, 0);
+    box-shadow: 2px 2px 10px;
+    background-color: rgba(75, 74, 74, 0.51);
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+
+#tela2 div article button:hover {
+    background-color: rgba(216, 19, 58, 0.5);
+    transition: 0.3s;
+    font-size: 3.6vh;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#tela2 .card {
+    width: 150px;
+    height: 250px;
+    background-color: rgb(132, 132, 175);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.511), 1px 1px 30px rgb(19, 3, 3);
+    margin: 0 auto;
+}
+
+#tela2 .card:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* integrantes */
+
+.gustavo {
+    background-image: url(../img/gustavo.jpg);
+    background-size: cover;
+}
+
+.erisson {
+    background-image: url(../img/erisson.jpg);
+    background-size: cover;
+}
+
+.marcelo {
+    background-image: url(../img/marcelo.jpg);
+    background-size: cover;
+}
+
+.andrew {
+    background-image: url(../img/andrew.jpg);
+    background-size: cover;
+}
+
+.deivao {
+    background-image: url(../img/deivao.jpg);
+    background-size: cover;
+}
+
+.matheus {
+    background-image: url(../img/matheus.jpg);
+    background-size: cover;
+}
+
+
+/* TELA 3 */
+
+
+#tela3 {
+    width: 100%;
+    height: 70vh;
+    background-color: rgb(77, 72, 72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+#tela3 aside {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 50px whitesmoke;
+
+}
+
+#tela3 #banner {
+    width: 100%;
+    height: 50%;
+    background-image: url(../img/agenda.jpg);
+    background-repeat: no-repeat;
+    background-position: contain;
+    background-size: 101%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tela3 #agenda {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#tela3 #agenda h2 {
+    font-size: 1.2em;
+    color: #fff;
+    text-align: center;
+}
+
+#tela3 #agenda li {
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    list-style: circle;
+}
+
+#tela3 #galeria {
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 50px whitesmoke;
+
+}
+
+#tela3 #galeria #wowslider-container0 {
+    box-shadow: 0px 0px 50px whitesmoke;
+}
+
+@media screen and (max-width:600px) {
+
+    #tela2 .card {
+        width: 150px;
+        height: 200px;
+    }
+
+    #tela2 div article button {
+        font-size: 1.2em;
+    }
+
+    #tela3 {
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    #tela3 aside {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        background-image: url(../img/Logo-branco.png);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+    }
+
+    #tela3 #banner {
+        display: none;
+    }
+
+    #tela3 #galeria {
+        display: none;
+    }
+
+    #tela3 #agenda {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        box-shadow: 0px 0px 50px whitesmoke;
+    }
+
+    #tela3 #agenda h2 {
+        color: rgb(255, 255, 255);
+        text-shadow: 0px 0px 50px rgb(32, 31, 31);
+        font-weight: bold;
+        margin-top: 5%;
+        margin-bottom: 10px;
+    }
+
+    #tela3 #agenda ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #tela3 #agenda ul li {
+        text-shadow: 1px 1px 5px rgb(134, 75, 75);
+
+    }
+
+    .menuGaleria {
+        visibility: hidden;
+        position: absolute;
+
+    }
+
+}
+
+@media screen and (max-width:430px) {
+
+    #tela2 #titulo {
+        width: 100%;
+        height: 20%;
+    }
+
+    #tela2 div {
+        width: 100%;
+        height: 80%;
+    }
+
+    #tela2 div article button {
+        font-size: 1.1em;
+    }
+
+    #tela2 div article button:hover {
+        background-color: rgba(216, 19, 58, 0.5);
+        transition: 0.3s;
+        font-size: 2.8vh;
+        font-weight: bold;
+    }
+
+    #tela2 .card:hover {
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
+
+    #tela3 #banner {
+        height: 40%;
+    }
+
+    #tela3 #agenda {
+        height: 60%;
+    }
+
+    #tela3 #agenda h2 {
+        margin-top: 10%;
+        margin-bottom: 10px;
+    }
+
+    #tela3 #agenda ul li {
+        font-size: 5vw;
+    }
+
+}
+
+@media screen and (max-width:330px) {
+    #tela2 .card {
+        width: 150px;
+        height: 200px;
+    }
+
+    #tela2 div article button {
+        font-size: 1.2em;
+    }
+
+}
+
+/* RODAPE */
+
+
+footer {
+    width: 100%;
+    height: 30vh;
+    background-color: #333;
+    color: white;
+}
+
+#rodape {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0.5px 0px 1px #000;
+    padding: 1% 4%;
+    font-size: 1em;
+    padding-bottom: 10px;
+    min-width: fit-content;
+    overflow: auto;
+}
+
+#rodape h2 {
+    font-size: 1.5em;
+}
+
+#rodape article div p {
+    padding: 5px 2px 0;
+}
+
+#rodape article div a {
+    font-size: 2vh;
+    text-decoration: underline white;
+}
+
+#rodape article div a:hover {
+    background-color: rgb(239, 241, 247);
+    transition: 0.3s;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#rodape #redes-sociais {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#rodape #redes-sociais a {
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: none;
+    transition: 0.3s;
+    font-size: 2em;
+    margin-right: 3%;
+    padding-bottom: 1%;
+
+}
+
+#rodape #redes-sociais a:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(216, 19, 58, 0.5);
+    transition: 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#rodape #redes-sociais a i {
+    transition: 0.2s;
+}
+
+#rodape #redes-sociais a i:hover {
+    transform: scale(1.6);
+
+}
+
+#rodape #redes-sociais p {
+    font-size: 0.8em;
+    transition: 0.3s;
+    min-width: fit-content;
+    margin-top: 5%;
+}
+
+@media (max-width: 900px) {
+    #rodape {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 585px) {
+    #rodape article div p {
+        transition: 0.3s;
+        font-size: 0.8em;
+    }
+
+    #rodape #redes-sociais a {
+        justify-content: flex-end;
+        align-items: flex-end;
+        transition: 0.3s;
+        font-size: 1.5em;
+    }
+
+    #rodape #redes-sociais p {
+        margin-top: 2%;
+        font-size: 0.5em;
+    }
+
+    #rodape h2 {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width:269px) {
+    #rodape h2 {
+        font-size: 6vw;
+    }
+
+    #rodape article div p {
+        font-size: 5vw;
+    }
+
+    #rodape article div a {
+        font-size: 4vw;
+    }
+}
+
+/* MODAL */
+
+.modal {
+    background-color: rgba(141, 137, 137, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 1001;
+    transition: 0.6s ease-in-out;
+    transform: translateX(-1.6);
+}
+
+.conteudo-modal {
+
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 3%;
+    max-width: 600px;
+    background-color: rgb(255, 246, 246);
+    padding: 0;
+    box-shadow: 0 0 2px #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.conteudo-modal .fotoModal {
+    padding: 10px;
+    width: 60%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.conteudo-modal .textoModal {
+    padding: 10px;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.conteudo-modal .textoModal h2 {
+
+    font-size: 1.6em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 6px rgb(0, 0, 0);
+    box-shadow: 2px 2px 10px;
+    background-color: rgba(75, 74, 74, 0.51);
+    border-radius: 10px;
+}
+
+.conteudo-modal .textoModal p {
+    font-size: 1.3em;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.conteudo-modal .btnFechar {
+
+    transition: 0.3s;
+    font-size: 3.7vh;
+    font-weight: bold;
+    position: relative;
+    top: -35px;
+    left: 210px;
+    border: none;
+}
+
+.conteudo-modal .btnFechar:hover {
+    transition: 0.3s;
+    font-size: 3.7vh;
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+@media screen and (max-width:620px) {
+    .conteudo-modal {
+
+        width: 80%;
+        height: 70%;
+    }
+
+    .conteudo-modal .btnFechar {
+        top: -35px;
+        left: 140px;
+    }
+
+    .conteudo-modal .textoModal p {
+        font-size: 3vh;
+    }
+}
+
+@media screen and (max-width:530px) {
+
+    .conteudo-modal {
+        width: 80%;
+        height: 70%;
+        display: flex;
+    }
+
+    .conteudo-modal .btnFechar {
+        top: -35px;
+        left: 120px;
+    }
+
+    .textoModal p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width:440px) {
+
+    .conteudo-modal {
+        width: 80%;
+        height: 60%;
+    }
+
+    .conteudo-modal .fotoModal {
+        width: 60%;
+        height: 100%;
+    }
+
+    .conteudo-modal .textoModal {
+        width: 40%;
+        height: 100%;
+    }
+
+    .conteudo-modal .textoModal h2 {
+        font-size: 1.4em;
+        text-align: center;
+        text-overflow: clip;
+    }
+
+    .conteudo-modal .textoModal h3 {
+        font-size: 3vh;
+    }
+
+    .conteudo-modal .textoModal p {
+        font-size: 0.9em;
+    }
+
+}
+
+@media screen and (max-width:340px) {
+
+    .conteudo-modal {
+        width: 95%;
+        height: 60%;
+
+    }
+
+    .conteudo-modal .fotoModal {
+        width: 60%;
+        height: 100%;
+
+    }
+
+    .conteudo-modal .textoModal {
+        width: 40%;
+        height: 100%;
+    }
+
+    .conteudo-modal .textoModal h2 {
+        font-size: 1.4em;
+        text-align: center;
+        text-overflow: clip;
+    }
+
+    .conteudo-modal .textoModal h3 {
+        font-size: 3vh;
+    }
+
+    .conteudo-modal .textoModal p {
+        font-size: 0.9em;
+    }
+
+}
+
+/* formulario MODAL */
+
+#contatoModal {
+    background-color: rgba(105, 105, 105, 0.52);
+
+}
+
+.modalForm {
+    width: 95vw;
+    height: calc(100vh - 50vh);
+    margin: 0 auto;
+    margin-top: 100px;
+    max-width: 800px;
+    min-width: 145px;
+
+    background-color: rgba(255, 255, 255, 0.85);
+    background-image: url(../img/Logo-branco.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 10px;
+    border: 3px solid rgb(94, 80, 80);
+    box-shadow: rgba(185, 8, 8, 0.51);
+    ;
+
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
+    z-index: 800;
+    transform: translateY(-1);
+
+
+}
+
+.modalForm #contato {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-width: 250px;
+
+}
+
+.modalForm #contato h2 {
+    font-size: 1.6em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 6px rgb(0, 0, 0);
+    box-shadow: 2px 2px 10px;
+    background-color: rgba(185, 8, 8, 0.51);
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+    margin-right: 5%;
+
+}
+
+.modalForm h4 {
+    color: #fff;
+    text-shadow: 1px 1px 6px rgb(0, 0, 0);
+    box-shadow: 2px 2px 10px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    font-size: 2vh;
+
+}
+
+.modalForm #contato ul {
+    margin: 5%;
+    box-shadow: 1px 1px 10px rgba(218, 6, 6, 0.5);
+    padding: 15px;
+
+}
+
+.modalForm #contato ul li {
+    text-align: justify;
+    font-size: 2.6vh;
+    text-shadow: 0px 0px 1px #000;
+    margin: 2%;
+
+}
+
+.modalForm #cadastro {
+    width: 50%;
+    font-size: 3vh;
+    text-shadow: 0px 0px 1px #000;
+    padding: 15px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.modalForm #cadastro #formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 1px 1px 6px rgb(0, 0, 0);
+    box-shadow: 2px 2px 10px;
+    background-color: rgba(185, 8, 8, 0.51);
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+}
+
+
+.modalForm #cadastro #formulario h3 {
+    font-weight: bold;
+    font-size: 4vh;
+    text-shadow: 0px 1px 5px rgba(54, 52, 52, 0.788);
+
+}
+
+.modalForm #cadastro #formulario label {
+    font-weight: bold;
+    font-size: 2.8vh;
+    margin: 2%;
+    text-shadow: 0px 1px 5px rgba(54, 52, 52, 0.788);
+}
+
+.modalForm #cadastro input {
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 30vw;
+    height: 2.5vh;
+    max-width: 230px;
+    text-shadow: 0 0 1px whitesmoke;
+}
+
+.modalForm #cadastro #btnEnviar {
+    border: 2px rgba(104, 01, 10, 0.53);
+    width: 80px;
+    border-radius: 5px;
+    margin: 3%;
+    color: rgba(255, 255, 255, 0.788);
+    font-size: 1rem;
+    background-color: rgb(168, 135, 129);
+    font-weight: bold;
+    border: 1px solid bisque;
+    text-shadow: 1px 1px 5px black;
+    padding-bottom: 15px;
+
+}
+
+.modalForm #cadastro #formulario #btnEnviar:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    transform: scale(1.2);
+    font-size: 2vh;
+    background-color: rgb(173, 73, 6);
+    color: #fff;
+    text-align: center;
+}
+
+
+.modalForm #cadastro #formulario input::placeholder {
+    font-style: italic;
+    text-align: center;
+    color: rgba(202, 67, 67, 0.788);
+    font-size: 0.8em;
+    text-shadow: 0 0 2px rgba(255, 132, 132, 0.48);
+}
+
+.modalForm #cadastro #formulario #reset {
+    transition: 0.3s;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid whitesmoke;
+    color: rgb(102, 15, 15);
+    text-shadow: 0px 0px 1px wheat;
+}
+
+.modalForm #cadastro #formulario #reset:hover {
+    transition: 0.3s;
+    font-size: 1.5vh;
+    cursor: pointer;
+    background-color: rgb(173, 73, 6);
+    color: #fff;
+    padding: 2%;
+}
+
+
+.modalForm .btnFechar {
+
+    transition: 0.3s;
+    font-size: 3.7vh;
+    font-weight: bold;
+    border: none;
+    color: rgba(255, 155, 155, 0.51);
+}
+
+.modalForm .btnFechar:hover {
+    transition: 0.3s;
+    font-size: 3.7vh;
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.2);
+    color: rgba(202, 67, 67, 0.788);
+}
+
+
+@media screen and (max-width:600px) {
+
+    .modalForm {
+        width: 95vw;
+        height: 80vh;
+        margin: 0 auto;
+        margin-top: 100px;
+        max-width: 800px;
+        min-width: 110px;
+        padding: 5px;
+    }
+
+}
+
+@media (max-width: 515px) {
+
+
+    .modalForm #contato {
+        width: 1vw;
+        margin: 0;
+    }
+
+    .modalForm #contato ul {
+
+        padding: 1%;
+    }
+
+    .modalForm #contato h2 {
+        font-size: 1.2em;
+        margin-right: 1%;
+    }
+
+    .modalForm #contato ul li {
+        text-align: justify;
+        font-size: 2.5vh;
+    }
+
+    .modalForm #cadastro {
+        width: 2vw;
+    }
+
+    .modalForm #cadastro #formulario h3 {
+        font-size: 5vw;
+    }
+
+    .modalForm #cadastro #formulario input::placeholder {
+        font-size: 1.5vh;
+    }
+
+}
+
+
+@media screen and (max-width:303px) {
+    .modalForm #contato h2 {
+        font-size: 1.2em;
+    }
+
+    .modalForm #contato ul li {
+        text-align: justify;
+        font-size: 2.5vh;
+    }
+
+    .modalForm #cadastro input {
+        font-size: 2vh;
+
+    }
+
+}
+
+
+@media screen and (max-width:270px) {
+
+
+    .modalForm #contato h2 {
+        font-size: 1em;
+    }
+
+    .modalForm #contato h3 {
+        font-size: 1em;
+    }
+
+    .modalForm #contato ul li {
+        text-align: justify;
+        font-size: 2.2vh;
+    }
+
+    .modalForm #cadastro input {
+        font-size: 2vh;
+
+    }
+
+    .modalForm #cadastro #formulario h3 {
+        font-weight: bold;
+        font-size: 2vh;
+        text-shadow: 0px 1px 5px rgba(54, 52, 52, 0.788);
+
+    }
+
+    .modalForm #cadastro #formulario label {
+        font-weight: bold;
+        font-size: 2vh;
+    }
+}
