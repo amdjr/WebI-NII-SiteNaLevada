@@ -19,7 +19,9 @@
 # Porto Alegre, 25 de Junho de 2021
 
 #############################################################################
-# Copyright© Desenvolvido por Adilson Monteiro - Todos os direitos reservados.
+
+# Copyright© Desenvolvido por Adilson Monteiro - Todos os direitos reservados
+
 #############################################################################
 
 O desafio foi fazer o site totalmente responsivo sem utilizar nenhum framework.
